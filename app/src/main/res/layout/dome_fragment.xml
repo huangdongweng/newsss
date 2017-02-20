@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/dome_home_f"
+        android:name="eud.zhuoxin.feicui.mynews.domefragment.HomeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/dome_home_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/select_background_color"
+            android:button="@null"
+            android:drawableTop="@drawable/select_home"
+            android:gravity="center"
+            android:text="首页"
+            android:textSize="20dp" />
+
+        <RadioButton
+            android:id="@+id/dome_my_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/select_background_color"
+            android:button="@null"
+            android:drawableTop="@drawable/select_my"
+            android:gravity="center"
+            android:text="登陆"
+            android:textSize="20dp" />
+
+        <RadioButton
+            android:id="@+id/dome_search_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/select_background_color"
+            android:button="@null"
+            android:drawableTop="@drawable/selsct_search"
+            android:gravity="center"
+            android:text="搜索"
+            android:textSize="20dp" />
+
+        <RadioButton
+            android:id="@+id/dome_tuan_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/select_background_color"
+            android:button="@null"
+            android:drawableTop="@drawable/select_tuan"
+            android:gravity="center"
+            android:text="收藏"
+            android:textSize="20dp" />
+
+    </RadioGroup>
+
+
+</RelativeLayout>

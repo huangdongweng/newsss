@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg4"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/news_user" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="用户名:"
+            android:textSize="30dp" />
+
+        <EditText
+            android:id="@+id/fragment_username_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="fill_horizontal"
+            android:layout_marginRight="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="密    码:"
+            android:textSize="30dp" />
+        <EditText
+            android:id="@+id/fragment_pwd_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="fill_horizontal"
+            android:layout_marginRight="20dp"
+            />
+    </LinearLayout>
+    <Button
+        android:id="@+id/fragment_denglu_but"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="登陆"
+        android:textSize="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:id="@+id/activity_zhuce_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注册账号"
+            android:textSize="20dp"
+            android:gravity="right"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/fragment_view"
+            />
+        <View
+            android:id="@+id/fragment_view"
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:background="#000"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/fragment_wangji_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="找回密码"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/fragment_view"
+            />
+    </RelativeLayout>
+</LinearLayout>
