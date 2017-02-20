@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +28,7 @@ import eud.zhuoxin.feicui.mynews.adapter.GuideAdapter;
 
 public class GuideActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
     private ViewPager vp;
-    private Button but;
-    private ImageView iv1, iv2, iv3;
+    private TextView but;
     private LayoutInflater inflater;
     private List<View> data = new ArrayList<>();
     /**
@@ -82,13 +82,9 @@ public class GuideActivity extends AppCompatActivity implements ViewPager.OnPage
      */
     private void initUI() {
         vp = (ViewPager) findViewById(R.id.activity_guide_vp);
-        but = (Button) findViewById(R.id.activity_guide_butt);
-        iv1 = (ImageView) findViewById(R.id.activity_guide_iv1);
-        iv2 = (ImageView) findViewById(R.id.activity_guide_iv2);
-        iv3 = (ImageView) findViewById(R.id.activity_guide_iv3);
+        but = (TextView) findViewById(R.id.activity_guide_butt);
 
     }
-
     /**
      * 初始化数据源
      */
@@ -96,9 +92,7 @@ public class GuideActivity extends AppCompatActivity implements ViewPager.OnPage
         inflater = LayoutInflater.from(this);
         data.add(inflater.inflate(R.layout.activity_guide_vp1, null));
         data.add(inflater.inflate(R.layout.activity_guide_vp3, null));
-        data.add(inflater.inflate(R.layout.activity_guide_vp4, null));
     }
-
     /**
      * 页面在滑动时会调用的方法
      */
@@ -106,7 +100,6 @@ public class GuideActivity extends AppCompatActivity implements ViewPager.OnPage
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
     }
-
     /**
      * 页面最终停止时会调用的方法
      */
@@ -114,25 +107,12 @@ public class GuideActivity extends AppCompatActivity implements ViewPager.OnPage
     public void onPageSelected(int position) {
         switch (position) {
             case 0:
-                iv1.setImageResource(R.drawable.shape_guide_cirk_red);
-                iv2.setImageResource(R.drawable.shape_guide_cirk_gray);
-                iv3.setImageResource(R.drawable.shape_guide_cirk_gray);
                 but.setVisibility(View.INVISIBLE);//消失
                 break;
             case 1:
-                iv1.setImageResource(R.drawable.shape_guide_cirk_gray);
-                iv2.setImageResource(R.drawable.shape_guide_cirk_red);
-                iv3.setImageResource(R.drawable.shape_guide_cirk_gray);
-                but.setVisibility(View.INVISIBLE);//消失
-                break;
-            case 2  :
-                iv1.setImageResource(R.drawable.shape_guide_cirk_gray);
-                iv2.setImageResource(R.drawable.shape_guide_cirk_gray);
-                iv3.setImageResource(R.drawable.shape_guide_cirk_red);
                 but.setVisibility(View.VISIBLE);//可见的
                 break;
         }
-
     }
     /**
      * 但页面状态发生变化时

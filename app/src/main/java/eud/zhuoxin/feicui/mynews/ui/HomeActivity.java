@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebHistoryItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +27,7 @@ import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
 import cn.sharesdk.tencent.qq.QQ;
 import cn.sharesdk.tencent.qzone.QZone;
+import cn.sharesdk.tencent.weibo.TencentWeibo;
 import eud.zhuoxin.feicui.mynews.R;
 import eud.zhuoxin.feicui.mynews.app.App;
 import eud.zhuoxin.feicui.mynews.fragment.CollectFragment;
@@ -66,14 +68,14 @@ public class HomeActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         //添加浮动按钮的监听事件
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
         //设置侧滑开关
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -86,7 +88,7 @@ public class HomeActivity extends AppCompatActivity
         View headview = navigationView.getHeaderView(0);
         iv = (ImageView) headview.findViewById(R.id.imageView);
         tv = (TextView) headview.findViewById(R.id.head_main_tv);
-        iv1 = (ImageView) headview.findViewById(R.id.head_img_iv);
+        iv1 = (ImageView) headview.findViewById(R.id.head_img_qq);
         iv.setOnClickListener(this);
         tv.setOnClickListener(this);
         iv1.setOnClickListener(this);
@@ -148,12 +150,9 @@ public class HomeActivity extends AppCompatActivity
             //显示收藏
             showCollectFragment();
 
-        } else if (id == R.id.nav_manage) {
-
         } else if (id == R.id.nav_share) {
             //一键分享
             showShare();
-        } else if (id == R.id.nav_send) {
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -265,14 +264,28 @@ public class HomeActivity extends AppCompatActivity
             case R.id.head_main_tv:
 
                 break;
-            case R.id.head_img_iv:
-                Platform weibo = ShareSDK.getPlatform(QQ.NAME);
-                weibo.SSOSetting(false);  //设置false表示使用SSO授权方式
-                weibo.setPlatformActionListener(this); // 设置分享事件回调
+            case R.id.head_img_qq:
+                Platform qq = ShareSDK.getPlatform(QQ.NAME);
+                qq.SSOSetting(false);  //设置false表示使用SSO授权方式
+                qq.setPlatformActionListener(this); // 设置分享事件回调
 
-                weibo.authorize();//单独授权
-                weibo.showUser(null);//授权并获取用户信息
-
+                qq.authorize();//单独授权
+                qq.showUser(null);//授权并获取用户信息
+                break;
+            case R.id.head_img_weixin:
+//                Platform weixin = ShareSDK.getPlatform(QQ.NAME);
+//                weixin.SSOSetting(false);  //设置false表示使用SSO授权方式
+//                weixin.setPlatformActionListener(this); // 设置分享事件回调
+//
+//                weixin.authorize();//单独授权
+//                weixin.showUser(null);//授权并获取用户信息
+                break;
+            case R.id.head_img_weibo:
+//                Platform weibo = ShareSDK.getPlatform(TencentWeibo.NAME);
+//                weibo.SSOSetting(false);  //设置false表示使用SSO授权方式
+//                weibo.setPlatformActionListener(this); // 设置分享事件回调
+//                weibo.authorize();//单独授权
+//                weibo.showUser(null);//授权并获取用户信息
                 break;
         }
     }

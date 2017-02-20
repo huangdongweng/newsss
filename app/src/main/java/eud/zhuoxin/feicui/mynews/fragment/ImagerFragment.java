@@ -44,9 +44,6 @@ public class ImagerFragment extends Fragment {
                 case App.IMAGER:
                     ImageToWL imageToWL = (ImageToWL) msg.obj;
                     data.addAll(imageToWL.getResults());
-                    for (ImageInfo info : imageToWL.getResults()) {
-                        Log.i("tag", "----------666666" + info.getUrl());
-                    }
                     adapter.notifyDataSetChanged();
                     break;
                 case 0x21:
@@ -55,13 +52,11 @@ public class ImagerFragment extends Fragment {
             }
         }
     };
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //视图 =来自...布局.(布局id，容器，boolean类型的依赖(是否添加依赖))
         View view = inflater.inflate(R.layout.fragment_iamger, container, false);
-        Log.i("tag", "----------7777777");
         //黄油刀.绑定（本类对象，视图）
         ButterKnife.bind(this, view);
         //创建适配器

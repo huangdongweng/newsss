@@ -1,5 +1,6 @@
 package eud.zhuoxin.feicui.mynews.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -69,7 +70,6 @@ public class RegisterFragment extends Fragment {
             }
         }
     };
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -77,12 +77,10 @@ public class RegisterFragment extends Fragment {
         ButterKnife.bind(this, view);
         return view;
     }
-
     @OnClick(R.id.fragment_register_but)
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.fragment_register_but:
-                Toast.makeText(getContext(), "*****", Toast.LENGTH_LONG).show();
                 final String names = name.getText().toString().trim();
                 final String pwds = pwd.getText().toString().trim();
                 final String mailt = milbox.getText().toString().trim();

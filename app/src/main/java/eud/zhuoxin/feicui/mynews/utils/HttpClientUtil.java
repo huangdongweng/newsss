@@ -60,7 +60,7 @@ public class HttpClientUtil {
         } catch (IOException e) {
             //异常
             listener.getResultFailer("网络链接异常");
-            listener.getResulrException(e);
+//            listener.getResulrException(e);
         } finally {
             if (br != null) {//关流
                 try {

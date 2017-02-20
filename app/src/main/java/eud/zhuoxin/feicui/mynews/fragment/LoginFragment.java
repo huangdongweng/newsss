@@ -15,19 +15,23 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.HashMap;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.sharesdk.framework.Platform;
+import cn.sharesdk.framework.PlatformActionListener;
+import cn.sharesdk.framework.ShareSDK;
+import cn.sharesdk.tencent.qq.QQ;
 import eud.zhuoxin.feicui.mynews.R;
 import eud.zhuoxin.feicui.mynews.app.App;
 import eud.zhuoxin.feicui.mynews.entity.UserInfo;
 import eud.zhuoxin.feicui.mynews.ui.UserActivity;
 import eud.zhuoxin.feicui.mynews.utils.UserManage;
-
 /**
  * Created by Administrator on 2017/1/16.
  */
-
 public class LoginFragment extends Fragment {
     @BindView(R.id.fragment_username_et)
     EditText name;
@@ -76,7 +80,6 @@ public class LoginFragment extends Fragment {
             }
         }
     };
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -85,7 +88,6 @@ public class LoginFragment extends Fragment {
         ButterKnife.bind(this, view);
         return view;
     }
-
     /***
      * 监听点击事件
      *
@@ -119,6 +121,4 @@ public class LoginFragment extends Fragment {
                 break;
         }
     }
-
-
 }

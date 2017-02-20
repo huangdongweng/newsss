@@ -19,6 +19,7 @@ import butterknife.OnClick;
 import eud.zhuoxin.feicui.mynews.R;
 import eud.zhuoxin.feicui.mynews.entity.UserInfo;
 import eud.zhuoxin.feicui.mynews.ui.HomeActivity;
+import eud.zhuoxin.feicui.mynews.ui.UserActivity;
 import eud.zhuoxin.feicui.mynews.utils.UserManage;
 
 /**
@@ -77,10 +78,4 @@ public class ForgetpassFragment extends Fragment {
             }).start();
         }
     }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        startActivity(new Intent(getActivity(),HomeActivity.class));
-}
         }
